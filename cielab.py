@@ -10,6 +10,9 @@ font = pygame.font.SysFont('Roboto', 20)
 N = 7
 grid_node_radius = 3
 
+sin, cos = np.sin, np.cos
+theta = 0
+
 def get_rgb_from_lab(L, a, b):
     lab = LabColor(L, a, b, observer='2', illuminant='d50')
     rgb = convert_color(lab, sRGBColor, target_illuminant='d50')
@@ -18,7 +21,7 @@ def get_rgb_from_lab(L, a, b):
         return None
     return rgb
 
-def get_grid_colors(n = 7):
+def get_grid_colors(n = 7, transform = np.eye(3)):
     gridL = np.linspace(-128, 127, n)
     gridA = np.linspace(-128, 127, n)
     gridB = np.linspace(-128, 127, n)
@@ -27,12 +30,13 @@ def get_grid_colors(n = 7):
     for L in gridL:
         for a in gridA:
             for b in gridB:
-                color = get_rgb_from_lab(L, a, b)
+                rotated_L, rotated_a, rotated_b = transform @ np.array([L, a, b])
+                color = get_rgb_from_lab(rotated_L, rotated_a, rotated_b)
                 if color != None:
                     colors.append(color)
     return colors
 
-def draw_layer(L, n = 30):
+def draw_layer(L, n = 30, transform = np.eye(3)):
     win.fill((214, 245, 174))
 
     a = np.linspace(-128, 127, n)
@@ -45,7 +49,7 @@ def draw_layer(L, n = 30):
             if color != None:
                 pygame.draw.rect(win, color, (50 + i*(size-100)/n, size - 50 - j*(size-100)/n, (size-100)/n, (size-100)/n))
     
-    # Draw the lattice poitns which intersect this layer
+    # Draw the lattice points which intersect this layer
     gridL = np.linspace(-128, 127, N)
     gridA = np.linspace(-128, 127, N)
     gridB = np.linspace(-128, 127, N)
