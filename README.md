@@ -23,13 +23,13 @@ coordinate, but still look similar to a human observer.
 
 There are many <a href='https://en.wikipedia.org/wiki/Color_space'>color spaces</a> out there, but <a href='https://en.wikipedia.org/wiki/CIELAB_color_space'>CIELAB</a> is built with the intention of being highly perceptually uniform. Using the <a href='https://python-colormath.readthedocs.io/en/latest/'>colormath</a> library, we can selected points in this space which are along a lattice in CIELAB and therefore have a minimum guaranteed perceptual difference between them,
 <p align='center'>
-  <img src='imgs/cielab.gif' width='500'>
+  <img src='imgs/cielab.gif' width='400'>
   <h5 align = 'center'>Intersection of lattice with CIELAB</h5>
 </p>
 
 Colors can be easily selected in batches in the even-colors.py file by changing the input of the get_grid_colors function. The behind the scenes work to get these colors can be seen in cielab.py.
 
 <p align='center'>
-  <img src='imgs/even-colors.JPG' width='500'>
+  <img src='imgs/even-colors.JPG' width='400'>
   <h5 align = 'center'>Generated colors using the described procedure</h5>
 </p>
