@@ -33,3 +33,5 @@ Colors can be easily selected in batches in the even-colors.py file by changing 
   <img src='imgs/even-colors.JPG' width='400'>
   <h5 align = 'center'>Generated colors using the described procedure</h5>
 </p>
+
+Read my article <a href='https://samuelperales.xyz/articles/color_spaces_and_even_color_spacing.html'>here</a> for more details.
