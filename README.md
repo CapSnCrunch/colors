@@ -9,7 +9,7 @@ selected, the program will automatically follow a piecewise linear path between 
 position of the marker following this path.
 
 <p align='center'>
-  <img src='imgs/para-color-example.gif' width='400'>
+  <img src='imgs/para-color-example.gif' width='600'>
   <h5 align = 'center'>Example of piecewise linear gradient selection</h5>
 </p>
 
