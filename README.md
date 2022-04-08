@@ -8,6 +8,11 @@ blue-axis and clicking in this square selects a point. You can see the selected 
 selected, the program will automatically follow a piecewise linear path between all of the points, changing the background color to match the current
 position of the marker following this path.
 
+<p align='center'>
+  <img src='imgs/para-color-example.gif' width='400'>
+  <h5 align = 'center'>Example of piecewise linear gradient selection</h5>
+</p>
+
 Eventually, I hope to add some way to interface with an arduino to control a set of RGB lights using this tool.
 
 ## Distinguishable Color Generation
