@@ -9,10 +9,27 @@ selected, the program will automatically follow a piecewise linear path between 
 position of the marker following this path.
 
 <p align='center'>
-  <img src='imgs/para-color-example.gif' width='600'>
+  <img src='imgs/para-color-example.gif' width='500'>
   <h5 align = 'center'>Example of piecewise linear gradient selection</h5>
 </p>
 
 Eventually, I hope to add some way to interface with an arduino to control a set of RGB lights using this tool.
 
 ## Distinguishable Color Generation
+In a research group of mine (Texas Experimental Geometry Lab), my group ran across the issue of needing to distinctly color a large number of datapoints.
+Randomly generating RGB values does not work well and neither does selecting a lattice of points in the RGB color model. This is because this model is not
+perceptually uniform (euclidean distance does not equate to human perceptual difference). That is, colors could be relatively far in terms of their RGB 
+coordinate, but still look similar to a human observer.
+
+There are many <a href='https://en.wikipedia.org/wiki/Color_space'>color spaces</a> out there, but <a href='https://en.wikipedia.org/wiki/CIELAB_color_space'>CIELAB</a> is built with the intention of being highly perceptually uniform. Using the <a href='https://python-colormath.readthedocs.io/en/latest/'>colormath</a> library, we can selected points in this space which are along a lattice in CIELAB and therefore have a minimum guaranteed perceptual difference between them,
+<p align='center'>
+  <img src='imgs/cielab.gif' width='500'>
+  <h5 align = 'center'>Intersection of lattice with CIELAB</h5>
+</p>
+
+Colors can be easily selected in batches in the even-colors.py file by changing the input of the get_grid_colors function. The behind the scenes work to get these colors can be seen in cielab.py.
+
+<p align='center'>
+  <img src='imgs/even-colors.JPG' width='500'>
+  <h5 align = 'center'>Generated colors using the described procedure</h5>
+</p>
