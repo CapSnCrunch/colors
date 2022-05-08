@@ -1,5 +1,4 @@
 import pygame
-import math
 
 width, height = 500, 500
 win = pygame.display.set_mode((width, height))
