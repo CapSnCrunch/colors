@@ -40,25 +40,25 @@ if __name__ == '__main__':
         win.fill((255, 255, 255))
 
         # RED GRAPH
-        pygame.draw.line(win, (0,0,0), (50, 50), (50, 150), 2)
-        pygame.draw.line(win, (0,0,0), (50, 150), (width - 50, 150), 2)
+        pygame.draw.line(win, (0,0,0), (50, 50), (50, 150), 1)
+        pygame.draw.line(win, (0,0,0), (50, 150), (width - 50, 150), 1)
         for i in range(len(red)-1):
             # pygame.draw.ellipse(win, (255,0,0), (50+i*4, 150-100*(red[i]/255), 4, 4))
-            pygame.draw.line(win, (255,0,0), (50+i*4, 150-100*(red[i]/255)), (50+(i+1)*4, 150-100*(red[(i+1)]/255)))
+            pygame.draw.line(win, (255,0,0), (50+i*4, 150-100*(red[i]/255)), (50+(i+1)*4, 150-100*(red[(i+1)]/255)), 2)
 
         # GREEN GRAPH
-        pygame.draw.line(win, (0,0,0), (50, 200), (50, 300), 2)
-        pygame.draw.line(win, (0,0,0), (50, 300), (width - 50, 300), 2)
+        pygame.draw.line(win, (0,0,0), (50, 200), (50, 300), 1)
+        pygame.draw.line(win, (0,0,0), (50, 300), (width - 50, 300), 1)
         for i in range(len(green)-1):
             # pygame.draw.ellipse(win, (0,255,0), (50+i*4, 300-100*(green[i]/255), 4, 4))
-            pygame.draw.line(win, (0,255,0), (50+i*4, 300-100*(green[i]/255)), (50+(i+1)*4, 300-100*(green[(i+1)]/255)))
+            pygame.draw.line(win, (0,255,0), (50+i*4, 300-100*(green[i]/255)), (50+(i+1)*4, 300-100*(green[(i+1)]/255)), 2)
 
         # BLUE GRAPH
-        pygame.draw.line(win, (0,0,0), (50, 350), (50, 450), 2)
-        pygame.draw.line(win, (0,0,0), (50, 450), (width - 50, 450), 2)
+        pygame.draw.line(win, (0,0,0), (50, 350), (50, 450), 1)
+        pygame.draw.line(win, (0,0,0), (50, 450), (width - 50, 450), 1)
         for i in range(len(blue)-1):
             # pygame.draw.ellipse(win, (0,0,255), (50+i*4, 450-100*(blue[i]/255), 4, 4))
-            pygame.draw.line(win, (0,0,255), (50+i*4, 450-100*(blue[i]/255)), (50+(i+1)*4, 450-100*(blue[(i+1)]/255)))
+            pygame.draw.line(win, (0,0,255), (50+i*4, 450-100*(blue[i]/255)), (50+(i+1)*4, 450-100*(blue[(i+1)]/255)), 2)
 
         # DRAW GRADIENT
         for i in range(len(red)):
