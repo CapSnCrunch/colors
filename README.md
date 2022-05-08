@@ -35,3 +35,11 @@ Colors can be easily selected in batches in the even-colors.py file by changing 
 </p>
 
 Read my article <a href='https://capsncrunch.github.io/articles/color_spaces_and_even_color_spacing.html'>here</a> for more details.
+
+## Color Curves
+Wanting more tools for generating color gradients, I thought of this tool where you can edit the individual curves of color which additively form your gradient. I plan on adding different color modes soon along with the ability to export your gradients.
+
+<p align='center'>
+  <img src='imgs/color-curves.gif' width='400'>
+  <h5 align = 'center'>Drawing RGB curves that add to form a gradient</h5>
+</p>
