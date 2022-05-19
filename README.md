@@ -1,4 +1,4 @@
-# Random Colors
+# Colors
 This is a repository which combines a couple of my different projects relating to color.
 
 ## Color Gradient Paths
